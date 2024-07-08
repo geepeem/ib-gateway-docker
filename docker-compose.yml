@@ -39,6 +39,7 @@ services:
       SSH_VNC_PORT: ${SSH_VNC_PORT:-}
     secrets:
       - tws_paper_password
+      - vnc_password
     ports:
       - "127.0.0.1:4001:4003"
       - "127.0.0.1:4002:4004"
@@ -46,3 +47,5 @@ services:
 secrets:
   tws_paper_password:
     file: pass/tws_paper_password.txt
+  vnc_password:
+    file: pass/vnc_password.txt
