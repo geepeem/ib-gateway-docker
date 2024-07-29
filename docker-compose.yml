@@ -40,11 +40,12 @@ services:
     secrets:
       - tws_paper_password
       - vnc_password
-    volumes:
-      - ${PWD}/jts.ini:/home/ibgateway/Jts/jts.ini
-      - ${PWD}/config.ini:/home/ibgateway/ibc/config.ini
-      - ${PWD}/tws_settings/:${TWS_SETTINGS_PATH:-/home/ibgateway/Jts}
-      - ${PWD}/ssh/:/home/ibgateway/.ssh
+      - tws_password
+#    volumes:
+#      - ${PWD}/jts.ini:/home/ibgateway/Jts/jts.ini
+#      - ${PWD}/config.ini:/home/ibgateway/ibc/config.ini
+#      - ${PWD}/tws_settings/:${TWS_SETTINGS_PATH:-/home/ibgateway/Jts}
+#      - ${PWD}/ssh/:/home/ibgateway/.ssh
     ports:
       - "127.0.0.1:4001:4003"
       - "127.0.0.1:4002:4004"
@@ -54,3 +55,5 @@ secrets:
     file: pass/tws_paper_password.txt
   vnc_password:
     file: pass/vnc_password.txt
+  tws_password:
+    file: pass/tws_password.txt
