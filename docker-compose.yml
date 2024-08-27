@@ -2,8 +2,8 @@ services:
   ib-gateway:
     restart: always
     build:
-      context: ./latest
-    image: ghcr.io/gnzsnz/ib-gateway:latest
+      context: ./stable
+    image: ghcr.io/gnzsnz/ib-gateway:stable
     env_file:
       - ./.env
     environment:
@@ -38,7 +38,7 @@ services:
       SSH_RESTART: ${SSH_RESTART:-}
       SSH_VNC_PORT: ${SSH_VNC_PORT:-}
     secrets:
-      - tws_paper_password
+      - tws_password_paper
       - vnc_password
       - tws_password
 #    volumes:
@@ -51,8 +51,8 @@ services:
       - "127.0.0.1:4002:4004"
       - "127.0.0.1:5900:5900"
 secrets:
-  tws_paper_password:
-    file: pass/tws_paper_password.txt
+  tws_password_paper:
+    file: pass/tws_password_paper.txt
   vnc_password:
     file: pass/vnc_password.txt
   tws_password:
