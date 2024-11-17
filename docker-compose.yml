@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
     environment:
-      TZ: ${TIME_ZONE:-Etc/UTC}
+      TZ: ${TIME_ZONE:-America/New_York}
       CUSTOM_CONFIG: ${CUSTOM_CONFIG:-NO}
     secrets:
       - tws_password_paper
